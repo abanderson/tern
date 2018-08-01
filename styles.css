@@ -1,0 +1,39 @@
+body {
+    font-family: "PLayfair Display", serif;
+}
+
+.entry {
+    width: 960px;
+    margin: 25px auto;
+    font-size: 1.2em;
+    /* border: 1px solid black; */
+}
+
+.entry-date {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.entry-edit {
+    float: right;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-right: 1em;
+    margin-top: 6px;
+}
+
+.entry-content {
+    line-height: 1.6em;
+}
+
+.chapter-title {
+    font-family: "Cinzel", serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+@media all and (max-width: 980px) {
+    .entry {
+        width: 95%;
+    }
+}
