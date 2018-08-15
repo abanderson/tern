@@ -14,6 +14,7 @@ router.get("/", function(req, res, next) {
         });
 });
 
+/* GET specific author */
 router.get("/:id", function(req, res, next) {
     models.author
         .findById(req.params.id)
@@ -24,5 +25,9 @@ router.get("/:id", function(req, res, next) {
             next(err);
         });
 });
+
+// Update author
+
+// Delete author
 
 module.exports = router;
