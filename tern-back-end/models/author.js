@@ -4,12 +4,12 @@ module.exports = (sequelize, DataTypes) => {
         "author",
         {
             username: DataTypes.STRING,
-            first_name: DataTypes.STRING,
-            last_name: DataTypes.STRING,
+            firstName: DataTypes.STRING,
+            lastName: DataTypes.STRING,
             email: DataTypes.STRING,
-            photo_url: DataTypes.STRING,
-            google_id_token: DataTypes.STRING,
-            facebook_id_token: DataTypes.STRING
+            photoUrl: DataTypes.STRING,
+            googleIdToken: DataTypes.STRING,
+            facebookIdToken: DataTypes.STRING
         },
         {}
     );
