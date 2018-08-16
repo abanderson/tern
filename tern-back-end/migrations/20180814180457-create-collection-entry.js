@@ -1,14 +1,14 @@
 "use strict";
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable("collection_entries", {
+        return queryInterface.createTable("collectionEntries", {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            collection_id: {
+            collectionId: {
                 allowNull: false,
                 references: {
                     model: "collections",
@@ -16,7 +16,7 @@ module.exports = {
                 },
                 type: Sequelize.INTEGER
             },
-            entry_id: {
+            entryId: {
                 allowNull: false,
                 references: {
                     model: "entries",

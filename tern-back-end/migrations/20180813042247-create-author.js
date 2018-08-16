@@ -13,10 +13,10 @@ module.exports = {
                 unique: true,
                 type: Sequelize.STRING
             },
-            first_name: {
+            firstName: {
                 type: Sequelize.STRING
             },
-            last_name: {
+            lastName: {
                 type: Sequelize.STRING
             },
             email: {
@@ -24,14 +24,14 @@ module.exports = {
                 unique: true,
                 type: Sequelize.STRING
             },
-            photo_url: {
+            photoUrl: {
                 type: Sequelize.STRING
             },
-            google_id_token: {
+            googleIdToken: {
                 unique: true,
                 type: Sequelize.STRING
             },
-            facebook_id_token: {
+            facebookIdToken: {
                 unique: true,
                 type: Sequelize.STRING
             },

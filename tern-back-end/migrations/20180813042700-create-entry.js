@@ -12,10 +12,10 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.TEXT
             },
-            public_content: {
+            publicContent: {
                 type: Sequelize.TEXT
             },
-            is_published: {
+            isPublished: {
                 allowNull: false,
                 type: Sequelize.BOOLEAN
             },
