@@ -3,7 +3,7 @@ const router = express.Router();
 const models = require("../models");
 
 /* GET all authors (users) */
-router.get("/", function(req, res, next) {
+router.get("/", (req, res, next) => {
     models.author
         .findAll()
         .then(authors => {
@@ -14,8 +14,22 @@ router.get("/", function(req, res, next) {
         });
 });
 
+/* GET route test to return all authors and their entries */
+router.get("/test", (req, res, next) => {
+    models.author
+        .findAll({
+            include: [{ model: models.entry }]
+        })
+        .then(authors => {
+            res.json(authors);
+        })
+        .catch(err => {
+            next(err);
+        });
+});
+
 /* GET specific author */
-router.get("/:id", function(req, res, next) {
+router.get("/:id", (req, res, next) => {
     models.author
         .findById(req.params.id)
         .then(author => {
@@ -25,6 +39,8 @@ router.get("/:id", function(req, res, next) {
             next(err);
         });
 });
+
+// Add author
 
 // Update author
 
