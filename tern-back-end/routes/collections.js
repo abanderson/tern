@@ -3,7 +3,7 @@ const router = express.Router();
 const models = require("../models");
 
 /* GET all collections */
-router.get("/", function(req, res, next) {
+router.get("/", (req, res, next) => {
     models.collection
         .findAll()
         .then(collections => {
@@ -42,5 +42,30 @@ router.get("/:authorid/:name", (req, res, next) => {
             next(err);
         });
 });
+
+router.post("/", (req, res, next) => {
+    models.collection
+        .findOrCreate({
+            where: {
+                name: req.body.name,
+                authorId: req.body.author
+            }
+        })
+        .spread((collection, created) => {
+            res.json({
+                created: created,
+                collection: collection
+            });
+        })
+        .catch(err => {
+            next(err);
+        });
+});
+
+// Add collection
+
+// Update collection
+
+// Delete collection
 
 module.exports = router;
