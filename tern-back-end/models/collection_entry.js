@@ -1,15 +1,15 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-    var collection_entry = sequelize.define(
-        "collection_entry",
+    var collectionEntry = sequelize.define(
+        "collectionEntry",
         {
-            collection_id: DataTypes.INTEGER,
-            entry_id: DataTypes.INTEGER
+            collectionId: DataTypes.INTEGER,
+            entryId: DataTypes.INTEGER
         },
         {}
     );
-    collection_entry.associate = function(models) {
+    collectionEntry.associate = function(models) {
         // associations can be defined here
     };
-    return collection_entry;
+    return collectionEntry;
 };
