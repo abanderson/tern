@@ -9,7 +9,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             username: {
-                allowNull: false,
+                // allowNull: false,
                 unique: true,
                 type: Sequelize.STRING
             },
@@ -20,18 +20,18 @@ module.exports = {
                 type: Sequelize.STRING
             },
             email: {
-                allowNull: false,
+                // allowNull: false,
                 unique: true,
                 type: Sequelize.STRING
             },
             photoUrl: {
                 type: Sequelize.STRING
             },
-            googleIdToken: {
+            googleId: {
                 unique: true,
                 type: Sequelize.STRING
             },
-            facebookIdToken: {
+            facebookId: {
                 unique: true,
                 type: Sequelize.STRING
             },
