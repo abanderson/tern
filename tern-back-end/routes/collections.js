@@ -36,19 +36,20 @@ router.get("/:authorid/:name", (req, res, next) => {
             }
         })
         .then(collection => {
-            res.json([collection]);
+            res.json(collection);
         })
         .catch(err => {
             next(err);
         });
 });
 
-router.post("/", (req, res, next) => {
+/* POST: Add collection for specific author (user) */
+router.post("/:authorid", (req, res, next) => {
     models.collection
         .findOrCreate({
             where: {
                 name: req.body.name,
-                authorId: req.body.author
+                authorId: req.params.authorid
             }
         })
         .spread((collection, created) => {
@@ -61,8 +62,6 @@ router.post("/", (req, res, next) => {
             next(err);
         });
 });
-
-// Add collection
 
 // Update collection
 

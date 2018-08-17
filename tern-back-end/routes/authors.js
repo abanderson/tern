@@ -40,7 +40,32 @@ router.get("/:id", (req, res, next) => {
         });
 });
 
-// Add author
+/* POST: Add author */
+// This route needs to be updated to only find author based
+// on Google ID or Facebook ID. If not found, create new user
+router.post("/", (req, res, next) => {
+    models.author
+        .findOrCreate({
+            where: {
+                username: req.body.username,
+                firstName: req.body.firstname,
+                lastName: req.body.lastname,
+                email: req.body.email,
+                photoUrl: req.body.photourl,
+                googleIdToken: req.body.googleidtoken,
+                facebookIdToken: req.body.facebookidtoken
+            }
+        })
+        .spread((author, created) => {
+            res.json({
+                created: created,
+                author: author
+            });
+        })
+        .catch(err => {
+            next(err);
+        });
+});
 
 // Update author
 
