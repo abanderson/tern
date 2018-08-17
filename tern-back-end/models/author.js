@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
             lastName: DataTypes.STRING,
             email: DataTypes.STRING,
             photoUrl: DataTypes.STRING,
-            googleIdToken: DataTypes.STRING,
-            facebookIdToken: DataTypes.STRING
+            googleId: DataTypes.STRING,
+            facebookId: DataTypes.STRING
         },
         {}
     );
