@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+{{#if isLoggedIn}}
+<a href="/logout">logout</a>
+{{/if}}
+
+{{#unless isLoggedIn}}
+<a href="/login/google">login with Google</a>
+{{!-- <a href="/login/github">login with Github</a> --}}
+{{/unless}}
