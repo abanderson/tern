@@ -1,5 +1,6 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const FacebookStrategy = require("passport-facebook").Strategy;
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
@@ -57,6 +58,52 @@ const setupAuth = app => {
         )
     );
 
+    passport.use(
+        new FacebookStrategy(
+            {
+                clientID: process.env.FACEBOOK_APP_ID,
+                clientSecret: process.env.FACEBOOK_APP_SECRET,
+                callbackURL: process.env.FACEBOOK_CALLBACK_URL,
+                profileFields: ["id", "name", "displayName", "photos", "email"]
+            },
+            (accessToken, refreshToken, profile, done) => {
+                console.log(profile);
+                models.author
+                    .findOrCreate({ where: { facebookId: profile.id } })
+                    .then(author => {
+                        if (
+                            author[0].firstName == null ||
+                            author[0].lastName == null
+                        ) {
+                            author[0]
+                                .update({
+                                    firstName: profile.name.givenName,
+                                    lastName: profile.name.familyName
+                                })
+                                .then(console.log("Profile name updated"));
+                        }
+
+                        if (author[0].photoUrl == null) {
+                            author[0]
+                                .update({ photoUrl: profile.photos[0].value })
+                                .then(console.log("Profile image updated"));
+                        }
+
+                        if (author[0].email == null) {
+                            author[0]
+                                .update({ email: profile.emails[0].value })
+                                .then(console.log("Email updated"));
+                        }
+
+                        return done(null, author[0]);
+                    })
+                    .catch(err => {
+                        done(err);
+                    });
+            }
+        )
+    );
+
     passport.serializeUser((author, done) => {
         done(null, author);
     });
@@ -76,11 +123,6 @@ const setupAuth = app => {
         })
     );
 
-    app.get("/logout", (req, res, next) => {
-        req.logout();
-        res.redirect("/");
-    });
-
     app.get(
         "/google/auth",
         passport.authenticate("google", { failureRedirect: "/login/google" }),
@@ -88,6 +130,26 @@ const setupAuth = app => {
             res.redirect("/");
         }
     );
+
+    app.get(
+        "/login/facebook",
+        passport.authenticate("facebook", { scope: ["email"] })
+    );
+
+    app.get(
+        "/facebook/auth",
+        passport.authenticate("facebook", {
+            failureRedirect: "/login/facebook"
+        }),
+        function(req, res) {
+            res.redirect("/");
+        }
+    );
+
+    app.get("/logout", (req, res, next) => {
+        req.logout();
+        res.redirect("/");
+    });
 };
 
 const ensureAuthenticated = (req, res, next) => {
