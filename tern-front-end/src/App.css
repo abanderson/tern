@@ -1,0 +1,75 @@
+body {
+    font-family: "Playfair Display", serif;
+    margin: 0;
+}
+
+nav {
+    display: inline;
+    float: right;
+    margin-top: 8px;
+    margin-right: 1em;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    margin-left: 0.5em;
+}
+
+.navbar {
+    height: 40px;
+    background-color: white;
+    border-bottom: solid 1px lightgrey;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    font-family: "Cinzel", serif;
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+
+.main {
+    margin-top: 65px;
+}
+
+.entry {
+    width: 960px;
+    margin: 0px auto 40px auto;
+    font-size: 1.2em;
+    /* border: 1px solid black; */
+}
+
+.entry-date {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.entry-edit {
+    float: right;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-right: 1em;
+    margin-top: 6px;
+}
+
+.entry-content {
+    line-height: 1.6em;
+}
+
+.chapter-title {
+    font-family: "Cinzel", serif;
+    font-size: 2em;
+    text-align: center;
+    /* margin-top: 25px; */
+    margin-bottom: 40px;
+}
+
+@media all and (max-width: 980px) {
+    .entry {
+        width: 95%;
+    }
+}
