@@ -6,7 +6,6 @@ const Navbar = () => {
             <span className="logo">Tern</span>
             <nav>
                 <a href="/ComposeEntry">Write</a>
-                <a href="#">Settings</a>
             </nav>
         </div>
     );

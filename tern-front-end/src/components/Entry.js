@@ -1,6 +1,6 @@
 import React from "react";
 
-const Entry = props => {
+const Entry = (props) => {
     return (
         <h1>
             <br />

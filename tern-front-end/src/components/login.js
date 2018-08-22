@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Redirect} from "react-router-dom";
 import axios from "axios";
 
 class Login extends Component {
@@ -26,6 +27,7 @@ class Login extends Component {
                     </div>
                 ) : (
                     <div>
+                        <a href="http://localhost:3000/login/google">Login Google</a>
                         <button onClick={this.login}>Login with Google</button>
                         <button>Login with Facebook</button>
                     </div>

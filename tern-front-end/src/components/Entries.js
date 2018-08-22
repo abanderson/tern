@@ -5,9 +5,9 @@ const Entries = props => {
     let EntryList = props.entries.map(entry => {
         return (
             <EntrySummary
-                //onEntrySelect={props.onEntrySelect}
                 key={entry.id}
                 entry={entry}
+                user={props.user}
             />
         );
     });
