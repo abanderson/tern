@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
+
+// const ensureAuthenticated = require("../auth").ensureAuthenticated;
 const models = require("../models");
+
+// router.all("*", ensureAuthenticated);
 
 /* GET all entries */
 router.get("/", (req, res, next) => {
@@ -28,11 +32,12 @@ router.get("/:authorid", (req, res, next) => {
 
 /* POST: Add entry for specific author (user) */
 router.post("/:authorid", (req, res, next) => {
+    console.log(req);
     models.entry
         .create({
             content: req.body.content,
-            publicContent: req.body.publiccontent,
-            isPublished: false,
+            publicContent: req.body.publicContent,
+            isPublished: true,
             title: req.body.title,
             location: req.body.location,
             latitude: req.body.latitude,
@@ -42,6 +47,29 @@ router.post("/:authorid", (req, res, next) => {
         })
         .then(entry => {
             res.json(entry);
+        })
+        .catch(err => {
+            next(err);
+        });
+});
+
+router.get("/:authorid/public", (req, res, next) => {
+    //console.log(req);
+    models.entry
+        .findAll({ where: { authorId: req.params.authorid } })
+        .then(entries => {
+            let newEntries = entries.map(entry => {
+                return entry.dataValues;
+            });
+            newEntries = newEntries.map(entry => {
+                entry.content = entry.publicContent;
+                return entry;
+            });
+            newEntries = newEntries.filter(entry => {
+                return entry.content != null;
+            });
+            console.log(newEntries);
+            res.json(newEntries);
         })
         .catch(err => {
             next(err);

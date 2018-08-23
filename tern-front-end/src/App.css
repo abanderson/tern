@@ -30,6 +30,12 @@ nav a {
     font-family: "Cinzel", serif;
     font-size: 2em;
     margin-left: 0.5em;
+    /*text-decoration: none;*/
+}
+
+.logo-link {
+    text-decoration: none;
+    color: black;
 }
 
 .main {
@@ -43,9 +49,15 @@ nav a {
     /* border: 1px solid black; */
 }
 
-.entry-date {
+.entry-title {
     font-size: 1.1em;
     font-weight: bold;
+}
+
+.entry-date {
+    float: right;
+    font-size: 1.1em;
+    /*font-weight: bold;*/
 }
 
 .entry-edit {
@@ -66,6 +78,74 @@ nav a {
     text-align: center;
     /* margin-top: 25px; */
     margin-bottom: 40px;
+}
+
+.welcome {
+    /*border: 1px black solid;*/
+    text-align: center;
+    width: 25%;
+    margin: 25vh auto;
+}
+
+.welcome a {
+    display: inline-block;
+}
+
+.welcome h1 {
+    font-family: "Cinzel", serif;
+    font-size: 70px;
+    margin-bottom: 0;
+}
+
+.welcome h2 {
+    font-size: 23px;
+    margin-bottom: 40px;
+}
+
+.google-login-button {
+    text-align: center;
+    background: url("img/btn_google_signin_light_normal_web@2x.png");
+    background-size: 191px 46px;
+    background-repeat: no-repeat;
+    /*display: block;*/
+    width: 191px;
+    height: 46px;
+}
+
+.google-login-button:hover {
+    background: url("img/btn_google_signin_light_focus_web@2x.png");
+    background-size: 191px 46px;
+    background-repeat: no-repeat;
+    /*display: block;*/
+    width: 191px;
+    height: 46px;
+}
+
+.google-login-button:active {
+    background: url("img/btn_google_signin_light_pressed_web@2x.png");
+    background-size: 191px 46px;
+    background-repeat: no-repeat;
+    /*display: block;*/
+    width: 191px;
+    height: 46px;
+}
+
+.compose-entry {
+    margin: 15px;
+}
+
+.compose-entry label {
+    display: block;
+}
+
+.compose-entry input {
+    margin-bottom: 20px;
+}
+
+.compose-entry-content {
+    width: 95%;
+    /*display: block;*/
+    /*margin: 0 auto;*/
 }
 
 @media all and (max-width: 980px) {

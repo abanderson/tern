@@ -1,16 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const EntrySummary = (props) => {
+const EntrySummary = props => {
+    let date = new Date(props.entry.createdAt);
+
+    let dateString = date.toLocaleDateString("en-us", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+
     return (
         <div className="entry">
             <div className="entry-header">
-                <span className="entry-date">{props.entry.date}</span>
-                <span className="entry-edit">Edit</span>
+                <span className="entry-title">{props.entry.title}</span>
+                <span className="entry-date">{dateString}</span>
             </div>
             <div className="entry-content">{props.entry.content}</div>
             <div className="entry-footer" />
-            <Link to={`/${props.user}/journal/${props.entry.id}`}>Read {props.entry.id}</Link>
         </div>
     );
 };

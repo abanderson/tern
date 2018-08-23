@@ -25,7 +25,6 @@ const setupAuth = app => {
                 callbackURL: process.env.GOOGLE_CALLBACK_URL
             },
             (accessToken, refreshToken, profile, done) => {
-                // console.log(profile);
                 models.author
                     .findOrCreate({
                         where: { googleId: profile.id }
@@ -67,7 +66,6 @@ const setupAuth = app => {
                 profileFields: ["id", "name", "displayName", "photos", "email"]
             },
             (accessToken, refreshToken, profile, done) => {
-                console.log(profile);
                 models.author
                     .findOrCreate({ where: { facebookId: profile.id } })
                     .then(author => {
@@ -127,7 +125,18 @@ const setupAuth = app => {
         "/google/auth",
         passport.authenticate("google", { failureRedirect: "/login/google" }),
         function(req, res) {
-            res.redirect("/");
+            //console.log(req.user.dataValues);
+            res.redirect(
+                //`http://localhost:3000/${req.user.dataValues.googleId}/journal`
+                //"http://localhost:3000?id=" + req.user.dataValues.googleId
+                // process.env.EXPRESS_REDIRECT_URL +
+                //     "?id=" +
+                //     req.user.dataValues.googleId
+                `${process.env.EXPRESS_REDIRECT_URL}?id=${
+                    req.user.dataValues.googleId
+                }`
+            );
+            // res.redirect("http://localhost:3001/");
         }
     );
 
@@ -148,7 +157,9 @@ const setupAuth = app => {
 
     app.get("/logout", (req, res, next) => {
         req.logout();
-        res.redirect("/");
+        //res.redirect("/");
+        //res.redirect("http://localhost:3000/");
+        res.redirect(process.env.EXPRESS_REDIRECT_URL);
     });
 };
 
