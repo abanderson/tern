@@ -21,7 +21,10 @@ router.get("/", (req, res, next) => {
 /* GET all entries for a specific author (user) */
 router.get("/:authorid", (req, res, next) => {
     models.entry
-        .findAll({ where: { authorId: req.params.authorid } })
+        .findAll({
+            where: { authorId: req.params.authorid },
+            order: [["createdAt", "DESC"]]
+        })
         .then(entries => {
             res.json(entries);
         })
@@ -56,7 +59,10 @@ router.post("/:authorid", (req, res, next) => {
 router.get("/:authorid/public", (req, res, next) => {
     //console.log(req);
     models.entry
-        .findAll({ where: { authorId: req.params.authorid } })
+        .findAll({
+            where: { authorId: req.params.authorid },
+            order: [["createdAt", "DESC"]]
+        })
         .then(entries => {
             let newEntries = entries.map(entry => {
                 return entry.dataValues;
