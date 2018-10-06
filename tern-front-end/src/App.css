@@ -144,8 +144,8 @@ nav a {
 
 .compose-entry-content {
     width: 95%;
-    /*display: block;*/
-    /*margin: 0 auto;*/
+    display: block;
+    margin-bottom: 20px;
 }
 
 @media all and (max-width: 980px) {
