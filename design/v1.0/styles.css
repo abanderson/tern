@@ -1,0 +1,57 @@
+body {
+    margin: 0 auto;
+}
+
+nav {
+    display: inline;
+    float: right;
+    margin-top: 18px;
+    margin-right: 1rem;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    margin-left: 0.5rem;
+}
+
+.main {
+    margin: 65px auto 0 auto;
+    width: 1200px;
+    border: 1px solid lightgrey;
+}
+
+.navbar {
+    height: 50px;
+    background-color: white;
+    border-bottom: solid 1px lightgrey;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    display: inline-block;
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    /*margin-left: 0.5rem;*/
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.user-icon {
+    background-color: lightgrey;
+    background-image: url("user-icon.png");
+    background-position: center;
+    background-size: 35px;
+    border-radius: 20px;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    margin-top: 8px;
+}
+
+
