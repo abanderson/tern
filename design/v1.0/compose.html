@@ -17,8 +17,51 @@
         </nav>
     </div>
     <div class="main">
-        <h1>Main</h1>
+        <div class="logs">
+            <span class="compose-field-heading">Logs</span>
+            <div class="log-selector">
+                <span>Display logs from:</span>
+                <select>
+                    <option value="24">Last 24 hours</option>
+                    <option value="72">Last 3 days</option>
+                    <option value="168">Last 7 days</option>
+                </select>
+            </div>
+            <div class="log">
+                <div class="log-date">Oct. 7 at 12:30 p.m.</div>
+                <div class="log-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et posuere felis, nec tempus est. Donec vitae sodales sapien. Suspendisse potenti. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+                <div class="log-right-display">
+                    <div class="log-location">Taipei, Taiwan</div>
+                    <div class="log-control-add">+</div>
+                </div>
+            </div>
+            <div class="log">
+                <div class="log-date">Oct. 7 at 11:30 a.m.</div>
+                <div class="log-content">hello</div>
+                <div class="log-right-display">
+                    <div class="log-location">Taipei, Taiwan</div>
+                    <div class="log-control-add">+</div>
+                </div>
+            </div>
+            <div class="log">
+                <div class="log-date">Oct. 7 at 8:30 a.m.</div>
+                <div class="log-content">hello</div>
+                <div class="log-right-display">
+                    <div class="log-location">Taipei, Taiwan</div>
+                    <div class="log-control-add">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="private-content">
+            <div class="compose-field-heading">Private</div>
+            <textarea rows="20" class="content-entry"></textarea>
+        </div>
+        <div class="public-content">
+            <div class="compose-field-heading">Public</div>
+            <textarea rows="20" class="content-entry"></textarea>
+        </div>
     </div>
+    <div class="footer-controls"></div>
 
 </body>
 </html>
