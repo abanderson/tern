@@ -1,9 +1,11 @@
 body {
     margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
 }
 
 nav {
     display: inline;
+    font-family: "Montserrat", sans-serif;
     float: right;
     margin-top: 18px;
     margin-right: 1rem;
@@ -125,6 +127,8 @@ nav a {
 
 .content-entry {
     width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
 }
 
 .footer-controls {
