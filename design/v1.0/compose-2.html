@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Compose — Tern</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Montserrat|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="compose-2.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Tern</div>
+        <div class="user-icon"></div>
+        <nav>
+            <a href="#">Write</a>
+            <a href="#">Edit</a>
+            <a href="#">Read</a>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="logs-container">
+            <div class="compose-heading">Logs</div>
+            <div class="log-selector">
+                <span>Display:</span>
+                <select>
+                    <option value="24">Last 24 hours</option>
+                    <option value="72">Last 3 days</option>
+                    <option value="168">Last 7 days</option>
+                </select>
+            </div>
+            <div class="logs">
+                <div class="log">
+<!--                     <div class="log-icon">
+                        <span class="far fa-sticky-note"></span>
+                    </div> -->
+                    <div class="log-info">
+                        <span class="log-date">Today</span>, <span class="log-time">12:30 p.m.</span>
+                    </div>
+                    <div class="log-control"><span class="fas fa-angle-down"></span></div>
+                </div>
+                <div class="log">
+                    <div class="log-icon">
+                        <span class="far fa-sticky-note"></span>
+                    </div>
+                    <div class="log-info">
+                        <span class="log-date">Yesterday</span>, <span class="log-time">12:30 p.m.</span>
+                    </div>
+                    <div class="log-control"><span class="fas fa-angle-down"></span></div>
+                </div>
+                <div class="log">
+                    <div class="log-icon">
+                        <span class="far fa-sticky-note"></span>
+                    </div>
+                    <div class="log-info">
+                        <span class="log-date">Tuesday</span>, <span class="log-time">12:30 p.m.</span>
+                    </div>
+                    <div class="log-control"><span class="fas fa-angle-down"></span></div>
+                </div>
+                <div class="log"></div>
+                <div class="log"></div>
+            </div>
+        </div>
+        <div class="compose-container">
+            <!-- <h3>Compose</h3> -->
+        </div>
+        <div class="controls-container">
+            <!-- <h3>Controls</h3> -->
+        </div>
+    </div>
+    <script src="app.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+body {
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    float: right;
+    margin-top: 18px;
+    margin-right: 1rem;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    margin-left: 0.5rem;
+}
+
+.navbar {
+    height: 50px;
+    background-color: white;
+    border-bottom: solid 1px lightgrey;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    display: inline-block;
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    /*margin-left: 0.5rem;*/
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.user-icon {
+    background-color: lightgrey;
+    background-image: url("user-icon.png");
+    background-position: center;
+    background-size: 35px;
+    border-radius: 20px;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    margin-top: 8px;
+}
+
+.main {
+    margin: 50px auto 0 auto;
+    width: 100%;
+    /*border: 1px solid lightgrey;*/
+}
+
+.logs-container {
+    width: 25%;
+    height: calc(100vh - 50px);
+    overflow: auto;
+    float: left;
+    border-right: 1px solid lightgrey;
+    padding-top: 10px;
+}
+
+.compose-container {
+    float: left;
+    padding-top: 10px;
+}
+
+.controls-container {
+    width: 25%;
+    height: calc(100vh - 50px);
+    overflow: auto;
+    float: right;
+    border-left: 1px solid lightgrey;
+    padding-top: 10px;
+}
+
+.compose-heading {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 0.25rem;
+}
+
+.log-selector {
+    float: right;
+    margin-right: 0.25rem;
+}
+
+.logs {
+    margin-top: 10px;
+}
+
+.log {
+    border-bottom: 1px solid lightgrey;
+    height: 50px;
+}
+
+.log:nth-of-type(1) {
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+}
+
+.log-open {
+    animation-name: log-open-animation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.log-close {
+    animation-name: log-close-animation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes log-open-animation {
+    from {
+        /*max-height: 0px;*/
+        /*background-color: white;*/
+        height: 50px;
+    }
+    to {
+        /*max-height: 500px;*/
+        /*background-color: lightgrey;*/
+        height: 150px;
+    }
+}
+
+@keyframes log-close-animation {
+    from {
+        /*max-height: 500px;*/
+        /*background-color: lightgrey;*/
+        height: 150px;
+    }
+    to {
+        /*max-height: 0px;*/
+        /*background-color: white;*/
+        height: 50px;
+    }
+}
+
+.log-icon {
+    display: inline-block;
+    float: left;
+    height: calc(100% - 15px);
+    width: 35px;
+    /*border: 1px solid lightgrey;*/
+    padding-top: 15px;
+    text-align: center;
+    /*background-color: #eeeeee;*/
+    font-size: larger;
+}
+
+.log-info {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    /*text-transform: uppercase;*/
+}
+
+.log-control {
+    display: inline-block;
+    /*border-left: 1px solid lightgrey;*/
+    float: right;
+    height: calc(100% - 15px);
+    width: 30px;
+    text-align: center;
+    /*background-color: lightgrey;*/
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+.log-date {
+    font-weight: 600;
+}
+
+.log-time {
+}
